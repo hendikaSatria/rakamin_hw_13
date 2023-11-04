@@ -7,7 +7,7 @@ const bcrypt = require("bcrypt");
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 const app = express();
-
+require('dotenv').config();
 
 function authenticateTokenMiddleware(req, res, next) {
   const authHeader = req.headers["authorization"];
@@ -22,7 +22,7 @@ function authenticateTokenMiddleware(req, res, next) {
 
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: 'http://localhost:3000',
   allowedHeaders: "Origin, X-Requested-With, Content-Type, Accept, Authorization",
   methods: "GET, POST, PUT, DELETE, PATCH, OPTIONS",
   optionsSuccessStatus: 200

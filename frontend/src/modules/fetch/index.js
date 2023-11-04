@@ -1,4 +1,4 @@
-import { instance } from '../axios/index';
+import { instance } from '../axios/index.js';
 
 // Function for register user endpoint
 async function registerUser(name, email, password) {
